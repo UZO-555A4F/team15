@@ -14,8 +14,8 @@ class CreatePriceLevelsTable extends Migration
     public function up()
     {
         Schema::create('price_levels', function (Blueprint $table) {
-            $table->id()->comment("編號");
-            $table->string("price_level",50)->comment("價格等級");
+            $table->id()->comment('編號');
+            $table->string('price_level',50)->comment('價格等級');
             $table->timestamps();
         });
     }

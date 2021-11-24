@@ -14,8 +14,8 @@ class CreateGenresTable extends Migration
     public function up()
     {
         Schema::create('genres', function (Blueprint $table) {
-            $table->id()->comment("編號");
-            $table->string("genre",191)->comment("餐點類型");
+            $table->id()->comment('編號');
+            $table->string('genre',191)->comment('餐點類型');
             $table->timestamps();
         });
     }

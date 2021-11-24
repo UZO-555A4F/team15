@@ -14,12 +14,12 @@ class CreateRestaurantsTable extends Migration
     public function up()
     {
         Schema::create('restaurants', function (Blueprint $table) {
-            $table->id()->comment("編號");
-            $table->string("name",191)->comment("名稱");
-            $table->string("address",191)->comment("地址");
-            $table->integer("gid")->comment("餐點類型")->unsigned();
-            $table->integer("pid")->comment("價格等級")->unsigned();
-            $table->char("telephone",10)->comment("電話")->nullable();
+            $table->id()->comment('編號');
+            $table->string('name',191)->comment('名稱');
+            $table->string('address',191)->comment('地址');
+            $table->integer('gid')->comment('餐點類型')->unsigned();
+            $table->integer('pid')->comment('價格等級')->unsigned();
+            $table->char('telephone',10)->comment('電話')->nullable();
             $table->timestamps();
         });
     }
