@@ -59,7 +59,8 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        return "顯示單一筆餐廳的編輯表單(id = " . $id . ")";
+        $restaurant = Restaurant::findOrFail($id);
+        return view('restaurants.edit')->with(['restaurant'=>$restaurant]);
     }
 
     /**
@@ -71,7 +72,16 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $restaurant = Restaurant::findOrFail($id);
+        $restaurant->name = $request->input('name');
+        $restaurant->address = $request->input('address');
+        $restaurant->gid = $request->input('gid');
+        $restaurant->pid = $request->input('pid');
+        $restaurant->telephone = $request->input('telephone');
+
+        $restaurant->save();
+
+        return redirect('restaurants');
     }
 
     /**

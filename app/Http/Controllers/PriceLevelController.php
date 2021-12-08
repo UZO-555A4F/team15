@@ -59,7 +59,8 @@ class PriceLevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $price_level = PriceLevel::findOrFail($id);
+        return view('price_levels.edit')->with(['price_level'=>$price_level]);
     }
 
     /**
@@ -71,7 +72,12 @@ class PriceLevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $price_level = PriceLevel::findOrFail($id);
+        $price_level->price_level = $request->input('price_level');
+
+        $price_level->save();
+
+        return redirect('price_levels');
     }
 
     /**

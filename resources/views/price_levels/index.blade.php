@@ -9,7 +9,8 @@
     <tr>
         <th>編號</th>
         <th>價格等級</th>
-        <th>操作</th>
+        <th>操作1</th>
+        <th>操作2</th>
     </tr>
     @foreach($price_levels as $price_level)
         <tr>
@@ -18,6 +19,11 @@
             <td>
                 <a href="price_levels/{{ $price_level->id }}">
                     詳細
+                </a>
+            </td>
+            <td>
+                <a href="price_levels/{{ $price_level->id }}/edit">
+                    修改
                 </a>
             </td>
         </tr>

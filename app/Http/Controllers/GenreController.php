@@ -59,7 +59,8 @@ class GenreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $genre = Genre::findOrFail($id);
+        return view('genres.edit')->with(['genre'=>$genre]);
     }
 
     /**
@@ -71,7 +72,12 @@ class GenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $genre = Genre::findOrFail($id);
+        $genre->name = $request->input('name');
+
+        $genre->save();
+
+        return redirect('genres');
     }
 
     /**

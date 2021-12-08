@@ -11,7 +11,8 @@
         <th>名稱</th>
         <th>餐點類型</th>
         <th>價格等級</th>
-        <th>操作</th>
+        <th>操作1</th>
+        <th>操作2</th>
     </tr>
     @foreach($restaurants as $restaurant)
         <tr>
@@ -22,6 +23,11 @@
             <td>
                 <a href="restaurants/{{ $restaurant->id }}">
                     詳細
+                </a>
+            </td>
+            <td>
+                <a href="restaurants/{{ $restaurant->id }}/edit">
+                    修改
                 </a>
             </td>
         </tr>
