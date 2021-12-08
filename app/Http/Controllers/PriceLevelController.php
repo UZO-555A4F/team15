@@ -47,7 +47,8 @@ class PriceLevelController extends Controller
      */
     public function show($id)
     {
-        return "顯示單一筆價格等級的紀錄(id = " . $id . ")";
+        $price_level = PriceLevel::findOrFail($id);
+        return view('price_levels.show')->with(['price_level'=>$price_level]);
     }
 
     /**

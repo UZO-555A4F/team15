@@ -47,7 +47,8 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        return "顯示單一筆餐廳類型的紀錄(id = " . $id . ")";
+        $genre = Genre::findOrFail($id);
+        return view('genres.show')->with(['genre'=>$genre]);
     }
 
     /**

@@ -47,7 +47,8 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        return "顯示單一筆餐廳的紀錄(id = " . $id . ")";
+        $restaurant = Restaurant::findOrFail($id);
+        return view('restaurants.show')->with(['restaurant'=>$restaurant]);
     }
 
     /**

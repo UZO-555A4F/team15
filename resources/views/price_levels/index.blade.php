@@ -4,7 +4,7 @@
     <title>顯示所有價格等級資料</title>
 </head>
 <body>
-<h1>顯示所有價格等級資料 </h1>
+<h1>顯示所有價格等級資料</h1>
 <table border="1">
     <tr>
         <th>編號</th>
