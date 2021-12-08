@@ -14,7 +14,7 @@
     @foreach($genres as $genre)
         <tr>
             <td>{{ $genre->id }}</td>
-            <td>{{ $genre->name }}</td>
+            <td>{{ $genre->genre }}</td>
             <td>
                 <a href="genres/{{ $genre->id }}">
                     詳細

@@ -14,7 +14,7 @@
     @foreach($price_levels as $price_level)
         <tr>
             <td>{{ $price_level->id }}</td>
-            <td>{{ $price_level->name }}</td>
+            <td>{{ $price_level->price_level }}</td>
             <td>
                 <a href="price_levels/{{ $price_level->id }}">
                     詳細
