@@ -10,7 +10,7 @@
         <table border="1">
             <tr>
                 <th>價格等級</th>
-                <td><input type="text" name="price_level"></td>
+                <td><input type="text" name="price_level" required></td>
             </tr>
         </table>
         <input type="submit" value="新增">

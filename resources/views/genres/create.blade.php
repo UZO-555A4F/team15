@@ -10,7 +10,7 @@
         <table border="1">
             <tr>
                 <th>餐點類型</th>
-                <td><input type="text" name="genre"></td>
+                <td><input type="text" name="genre" required></td>
             </tr>
         </table>
         <input type="submit" value="新增">

@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>餐點類型</th>
-                <td><input type="text" name="genre" value="{{ $genre->genre }}"></td>
+                <td><input type="text" name="genre" value="{{ $genre->genre }}" required></td>
             </tr>
         </table>
         <input type="submit" value="修改">
