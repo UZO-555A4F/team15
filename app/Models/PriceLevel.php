@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PriceLevel extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'price_level'
+    ];
 }

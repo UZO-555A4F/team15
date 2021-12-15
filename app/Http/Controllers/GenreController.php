@@ -25,7 +25,7 @@ class GenreController extends Controller
      */
     public function create()
     {
-        //
+        return view('genres.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genre = $request->input('genre');
+
+        Genre::create(
+            [
+                'genre' => $genre
+            ]
+        );
+
+        return redirect('genres');
     }
 
     /**
@@ -73,7 +81,7 @@ class GenreController extends Controller
     public function update(Request $request, $id)
     {
         $genre = Genre::findOrFail($id);
-        $genre->name = $request->input('name');
+        $genre->genre = $request->input('genre');
 
         $genre->save();
 

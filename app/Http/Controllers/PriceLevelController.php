@@ -25,7 +25,7 @@ class PriceLevelController extends Controller
      */
     public function create()
     {
-        //
+        return view('price_levels.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class PriceLevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $price_level = $request->input('price_level');
+
+        PriceLevel::create(
+            [
+                'price_level' => $price_level
+            ]
+        );
+
+        return redirect('price_levels');
     }
 
     /**

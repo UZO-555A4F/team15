@@ -25,7 +25,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return "產生新增餐廳的表單";
+        return view('restaurants.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        return "在資料庫新增一筆餐廳的紀錄";
+        $name = $request->input('name');
+        $address = $request->input('address');
+        $gid = $request->input('gid');
+        $pid = $request->input('pid');
+        $telephone = $request->input('telephone');
+
+        Restaurant::create(
+            [
+                'name' => $name,
+                'address' => $address,
+                'gid' => $gid,
+                'pid' => $pid,
+                'telephone' => $telephone
+            ]
+        );
+
+        return redirect('restaurants');
     }
 
     /**

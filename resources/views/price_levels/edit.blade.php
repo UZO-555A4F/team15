@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>修改單筆價格等級資料</h1>
-    <form action="price_levels/{{ $price_level->id }}" method="POST">
+    <form action="/price_levels/{{ $price_level->id }}" method="POST">
         @csrf
         @method('put')
         <table border="1">
