@@ -88,6 +88,8 @@ class PriceLevelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $price_level = PriceLevel::findOrFail($id);
+        $price_level->delete();
+        return redirect('price_levels');
     }
 }

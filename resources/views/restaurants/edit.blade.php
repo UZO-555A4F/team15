@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>修改單筆餐廳詳細資料</h1>
-    <form action="/restaurants/{{ $restaurant->id }}" method="POST">
+    <form action="restaurants/{{ $restaurant->id }}" method="POST">
         @csrf
         @method('put')
         <table border="1">

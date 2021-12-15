@@ -13,6 +13,7 @@
         <th>價格等級</th>
         <th>操作1</th>
         <th>操作2</th>
+        <th>操作3</th>
     </tr>
     @foreach($restaurants as $restaurant)
         <tr>
@@ -29,6 +30,13 @@
                 <a href="restaurants/{{ $restaurant->id }}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form action="restaurants/{{ $restaurant->id }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="刪除">
+                </form>
             </td>
         </tr>
     @endforeach
