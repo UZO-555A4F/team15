@@ -5,7 +5,10 @@
 </head>
 <body>
     <h1>顯示所有餐點類型資料</h1>
-    <a href="/genres/create">新增餐點類型</a>
+    <a href="{{ route('genres.create') }}">新增餐點類型</a><br/>
+    <a href="{{ route('restaurants.index') }}">所有餐廳</a>
+    <a href="{{ route('genres.index') }}">所有餐點類型</a>
+    <a href="{{ route('price_levels.index') }}">所有價格等級</a>
     <table border="1">
         <tr>
             <th>編號</th>
@@ -19,12 +22,12 @@
                 <td>{{ $genre->id }}</td>
                 <td>{{ $genre->genre }}</td>
                 <td>
-                    <a href="/genres/{{ $genre->id }}">
+                    <a href="{{ route('genres.show', ['genre'=>$genre->id]) }}">
                         詳細
                     </a>
                 </td>
                 <td>
-                    <a href="/genres/{{ $genre->id }}/edit">
+                    <a href="{{ route('genres.edit', ['genre'=>$genre->id]) }}">
                         修改
                     </a>
                 </td>

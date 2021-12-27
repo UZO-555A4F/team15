@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>修改單筆價格等級資料</h1>
+    <a href="{{ route('price_levels.index') }}">所有價格等級</a>
     <form action="/price_levels/{{ $price_level->id }}" method="POST">
         @csrf
         @method('put')

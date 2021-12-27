@@ -5,7 +5,10 @@
 </head>
 <body>
     <h1>顯示所有餐廳資料</h1>
-    <a href="/restaurants/create">新增餐廳</a>
+    <a href="{{ route('restaurants.create') }}">新增餐廳</a><br/>
+    <a href="{{ route('restaurants.index') }}">所有餐廳</a>
+    <a href="{{ route('genres.index') }}">所有餐點類型</a>
+    <a href="{{ route('price_levels.index') }}">所有價格等級</a>
     <table border="1">
         <tr>
             <th>編號</th>
@@ -23,12 +26,12 @@
                 <td>{{ $restaurant->gid }}</td>
                 <td>{{ $restaurant->pid }}</td>
                 <td>
-                    <a href="/restaurants/{{ $restaurant->id }}">
+                    <a href="{{ route('restaurants.show', ['restaurant'=>$restaurant->id]) }}">
                         詳細
                     </a>
                 </td>
                 <td>
-                    <a href="/restaurants/{{ $restaurant->id }}/edit">
+                    <a href="{{ route('restaurants.edit', ['restaurant'=>$restaurant->id]) }}">
                         修改
                     </a>
                 </td>

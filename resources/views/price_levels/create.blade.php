@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>新增價格等級資料表單</h1>
+    <a href="{{ route('price_levels.index') }}">所有價格等級</a>
     <form action="/price_levels" method="POST">
         @csrf
         <table border="1">

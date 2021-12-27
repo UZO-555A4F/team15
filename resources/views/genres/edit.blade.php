@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>修改單筆餐點類型詳細資料</h1>
+    <a href="{{ route('genres.index') }}">所有餐點類型</a>
     <form action="/genres/{{ $genre->id }}" method="POST">
         @csrf
         @method('put')

@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>新增餐廳資料表單</h1>
+    <a href="{{ route('restaurants.index') }}">所有餐廳</a>
     <form action="/restaurants" method="POST">
         @csrf
         <table border="1">

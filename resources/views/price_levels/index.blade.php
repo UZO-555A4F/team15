@@ -5,7 +5,10 @@
 </head>
 <body>
     <h1>顯示所有價格等級資料</h1>
-    <a href="/price_levels/create">新增價格等級</a>
+    <a href="{{ route('price_levels.create') }}">新增價格等級</a><br/>
+    <a href="{{ route('restaurants.index') }}">所有餐廳</a>
+    <a href="{{ route('genres.index') }}">所有餐點類型</a>
+    <a href="{{ route('price_levels.index') }}">所有價格等級</a>
     <table border="1">
         <tr>
             <th>編號</th>
@@ -19,12 +22,12 @@
                 <td>{{ $price_level->id }}</td>
                 <td>{{ $price_level->price_level }}</td>
                 <td>
-                    <a href="/price_levels/{{ $price_level->id }}">
+                    <a href="{{ route('price_levels.show', ['price_level'=>$price_level->id]) }}">
                         詳細
                     </a>
                 </td>
                 <td>
-                    <a href="/price_levels/{{ $price_level->id }}/edit">
+                    <a href="{{ route('price_levels.edit', ['price_level'=>$price_level->id]) }}">
                         修改
                     </a>
                 </td>

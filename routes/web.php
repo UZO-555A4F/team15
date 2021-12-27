@@ -17,7 +17,7 @@ use App\Http\Controllers\PriceLevelController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('restaurants');
 });
 
 Route::resource("restaurants", RestaurantController::class);
