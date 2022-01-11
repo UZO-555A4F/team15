@@ -11,4 +11,9 @@ class PriceLevel extends Model
     protected $fillable = [
         'price_level'
     ];
+
+    public function restaurants()
+    {
+        return $this->hasMany('App\Models\Restaurant', 'pid');
+    }
 }

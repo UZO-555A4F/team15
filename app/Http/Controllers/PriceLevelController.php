@@ -14,7 +14,7 @@ class PriceLevelController extends Controller
      */
     public function index()
     {
-        $price_levels = PriceLevel::all();
+        $price_levels = PriceLevel::all()->sortBy('id');
         return view('price_levels.index')->with(['price_levels'=>$price_levels]);
     }
 

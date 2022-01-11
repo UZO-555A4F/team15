@@ -14,7 +14,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genres = Genre::all();
+        $genres = Genre::all()->sortBy('id');
         return view('genres.index')->with(['genres'=>$genres]);
     }
 

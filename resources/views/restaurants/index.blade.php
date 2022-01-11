@@ -7,7 +7,10 @@
     <a href="{{ route('restaurants.create') }}">新增餐廳</a>
     <table border="1">
         <tr>
-            <th>編號</th>
+            <th>名稱</th>
+            <td><input type="text" name="name" required></td>
+        </tr>
+        <tr>
             <th>名稱</th>
             <th>餐點類型</th>
             <th>價格等級</th>
@@ -17,10 +20,9 @@
         </tr>
         @foreach($restaurants as $restaurant)
             <tr>
-                <td>{{ $restaurant->id }}</td>
                 <td>{{ $restaurant->name }}</td>
-                <td>{{ $restaurant->gid }}</td>
-                <td>{{ $restaurant->pid }}</td>
+                <td>{{ $restaurant->genre->genre }}</td>
+                <td>{{ $restaurant->price_level->price_level }}</td>
                 <td><a href="{{ route('restaurants.show', ['restaurant'=>$restaurant->id]) }}">詳細</a></td>
                 <td><a href="{{ route('restaurants.edit', ['restaurant'=>$restaurant->id]) }}">修改</a></td>
                 <td>

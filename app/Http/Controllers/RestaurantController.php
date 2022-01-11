@@ -14,7 +14,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::all()->sortBy('gid');
         return view('restaurants.index')->with(['restaurants'=>$restaurants]);
     }
 
@@ -111,6 +111,18 @@ class RestaurantController extends Controller
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->delete();
         return redirect('restaurants');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  string $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name)
+    {
+        $restaurants = Restaurant::where('name', 'like', '%'.$name.'%')->get();
+        return view('restaurants.index')->with(['restaurant'=>$restaurants]);
     }
 
     public function api_restaurants()

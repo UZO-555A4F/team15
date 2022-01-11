@@ -11,4 +11,9 @@ class Genre extends Model
     protected $fillable = [
         'genre'
     ];
+
+    public function restaurants()
+    {
+        return $this->hasMany('App\Models\Restaurant', 'gid');
+    }
 }

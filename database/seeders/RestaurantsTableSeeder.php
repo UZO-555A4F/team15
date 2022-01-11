@@ -32,7 +32,8 @@ class RestaurantsTableSeeder extends Seeder
             '食堂',
             '小店',
             '飯館',
-            '餐廳'
+            '餐廳',
+            '餐館'
         ];
         $food = $foodArr[rand(0, count($foodArr)-1)];
         $style = $styleArr[rand(0, count($styleArr)-1)];
@@ -57,7 +58,7 @@ class RestaurantsTableSeeder extends Seeder
 
     public function run()
     {
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 250; $i++) {
             $name = $this->generateRandomName();
             $address = $this->generateRandomAddress();
             $telephone = $this->generateRandomTelephoneNumber();

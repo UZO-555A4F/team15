@@ -15,4 +15,14 @@ class Restaurant extends Model
         'pid',
         'telephone'
     ];
+
+    public function genre()
+    {
+        return $this->belongsTo('App\Models\Genre', 'gid', 'id');
+    }
+
+    public function price_level()
+    {
+        return $this->belongsTo('App\Models\PriceLevel', 'pid', 'id');
+    }
 }

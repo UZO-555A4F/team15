@@ -20,6 +20,8 @@ Route::get('/', function () {
     return redirect('restaurants');
 });
 
+Route::get('restaurants/search/{name}', [RestaurantController::class, 'search']);
+
 Route::resource("restaurants", RestaurantController::class);
 Route::resource("genres", GenreController::class);
 Route::resource("price_levels", PriceLevelController::class);

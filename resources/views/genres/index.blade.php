@@ -8,7 +8,6 @@
         <a href="{{ route('genres.create') }}">新增餐點類型</a>
         <table border="1">
             <tr>
-                <th>編號</th>
                 <th>餐點類型</th>
                 <th>操作1</th>
                 <th>操作2</th>
@@ -16,7 +15,6 @@
             </tr>
             @foreach($genres as $genre)
                 <tr>
-                    <td>{{ $genre->id }}</td>
                     <td>{{ $genre->genre }}</td>
                     <td><a href="{{ route('genres.show', ['genre'=>$genre->id]) }}">詳細</a></td>
                     <td><a href="{{ route('genres.edit', ['genre'=>$genre->id]) }}">修改</a></td>
