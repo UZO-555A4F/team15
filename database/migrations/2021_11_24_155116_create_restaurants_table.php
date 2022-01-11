@@ -21,8 +21,8 @@ class CreateRestaurantsTable extends Migration
             $table->foreignId('pid')->comment('價格等級')->unsigned();
             $table->char('telephone',10)->comment('電話')->nullable();
             $table->timestamps();
-            $table->foreign('gid')->references('id')->on('genres')->onDelete('cascade');
-            $table->foreign('pid')->references('id')->on('price_levels')->onDelete('cascade');
+            $table->foreign('gid')->references('id')->on('genres')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('pid')->references('id')->on('price_levels')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -1,14 +1,10 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>顯示所有餐廳資料</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', '顯示所有餐廳資料')
+
+@section('guide_contents')
     <h1>顯示所有餐廳資料</h1>
-    <a href="{{ route('restaurants.create') }}">新增餐廳</a><br/>
-    <a href="{{ route('restaurants.index') }}">所有餐廳</a>
-    <a href="{{ route('genres.index') }}">所有餐點類型</a>
-    <a href="{{ route('price_levels.index') }}">所有價格等級</a>
+    <a href="{{ route('restaurants.create') }}">新增餐廳</a>
     <table border="1">
         <tr>
             <th>編號</th>
@@ -25,16 +21,8 @@
                 <td>{{ $restaurant->name }}</td>
                 <td>{{ $restaurant->gid }}</td>
                 <td>{{ $restaurant->pid }}</td>
-                <td>
-                    <a href="{{ route('restaurants.show', ['restaurant'=>$restaurant->id]) }}">
-                        詳細
-                    </a>
-                </td>
-                <td>
-                    <a href="{{ route('restaurants.edit', ['restaurant'=>$restaurant->id]) }}">
-                        修改
-                    </a>
-                </td>
+                <td><a href="{{ route('restaurants.show', ['restaurant'=>$restaurant->id]) }}">詳細</a></td>
+                <td><a href="{{ route('restaurants.edit', ['restaurant'=>$restaurant->id]) }}">修改</a></td>
                 <td>
                     <form action="/restaurants/{{ $restaurant->id }}" method="POST">
                         @csrf
@@ -45,5 +33,4 @@
             </tr>
         @endforeach
     </table>
-</body>
-</html>
+@endsection

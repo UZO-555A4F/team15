@@ -27,13 +27,12 @@ class RestaurantsTableSeeder extends Seeder
             '新莊'
         ];
         $styleArr = [
-            '美式炸雞',
-            '義式料理',
-            '日式食堂',
-            '快炒店',
-            '早餐店',
-            '自助餐',
-            '滷味'
+            '廚房',
+            '料理',
+            '食堂',
+            '小店',
+            '飯館',
+            '餐廳'
         ];
         $food = $foodArr[rand(0, count($foodArr)-1)];
         $style = $styleArr[rand(0, count($styleArr)-1)];

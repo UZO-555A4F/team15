@@ -100,4 +100,47 @@ class PriceLevelController extends Controller
         $price_level->delete();
         return redirect('price_levels');
     }
+
+    public function api_price_levels()
+    {
+        return PriceLevel::all();
+    }
+
+    public function api_update(Request $request)
+    {
+        $price_level = PriceLevel::find($request->input('id'));
+        if ($price_level == null) {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        $price_level->price_level = $request->input('price_level');
+        if ($price_level->save()) {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+
+    public function api_delete(Request $request)
+    {
+        $price_level = PriceLevel::find($request->input('id'));
+
+        if ($price_level == null) {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($price_level->delete()) {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
+    }
 }

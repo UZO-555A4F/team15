@@ -112,4 +112,53 @@ class RestaurantController extends Controller
         $restaurant->delete();
         return redirect('restaurants');
     }
+
+    public function api_restaurants()
+    {
+        return Restaurant::all();
+    }
+
+    public function api_update(Request $request)
+    {
+        $restaurant = Restaurant::find($request->input('id'));
+        if ($restaurant == null) {
+            return response()->json([
+                'status'=>0,
+            ]);
+        }
+
+        $restaurant->name = $request->input('name');
+        $restaurant->address = $request->input('address');
+        $restaurant->gid = $request->input('gid');
+        $restaurant->pid = $request->input('pid');
+        $restaurant->telephone = $request->input('telephone');
+        if ($restaurant->save())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+
+    public function api_delete(Request $request)
+    {
+        $restaurant = Restaurant::find($request->input('id'));
+        if ($restaurant == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($restaurant->delete())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
+    }
 }
