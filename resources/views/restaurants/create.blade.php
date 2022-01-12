@@ -20,10 +20,32 @@
                 <tr>
                     <th>餐點類型</th>
                     <td><input type="text" name="gid" required></td>
+{{--                    <td>--}}
+{{--                        <select name="gid" required>--}}
+{{--                            @foreach($genres as $genre)--}}
+{{--                                @if($genre->genre === $restaurant->genre)--}}
+{{--                                    <option value="{{ $restaurant->genre }}" selected></option>--}}
+{{--                                @else--}}
+{{--                                    <option value="{{ $genre->genre }}"></option>--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                    </td>--}}
                 </tr>
                 <tr>
                     <th>價格等級</th>
                     <td><input type="text" name="pid" required></td>
+{{--                    <td>--}}
+{{--                        <select name="pid" required>--}}
+{{--                            @foreach($price_levels as $price_level)--}}
+{{--                                @if($price_level->price_level === $restaurant->price_level)--}}
+{{--                                    <option value="{{ $restaurant->price_level }}" selected></option>--}}
+{{--                                @else--}}
+{{--                                    <option value="{{ $price_level->price_level }}"></option>--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                    </td>--}}
                 </tr>
                 <tr>
                     <th>電話</th>

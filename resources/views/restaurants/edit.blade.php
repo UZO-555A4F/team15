@@ -20,11 +20,11 @@
                 </tr>
                 <tr>
                     <th>餐點類型</th>
-                    <td><input type="text" name="gid" value="{{ $restaurant->gid }}" required></td>
+                    <td><input type="text" name="gid" value="{{ $restaurant->genre->genre }}" required></td>
                 </tr>
                 <tr>
                     <th>價格等級</th>
-                    <td><input type="text" name="pid" value="{{ $restaurant->pid }}" required></td>
+                    <td><input type="text" name="pid" value="{{ $restaurant->price_level->price_level }}" required></td>
                 </tr>
                 <tr>
                     <th>電話</th>

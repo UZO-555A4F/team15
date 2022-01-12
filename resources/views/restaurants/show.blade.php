@@ -17,11 +17,11 @@
             </tr>
             <tr>
                 <th>餐點類型</th>
-                <td>{{ $restaurant->gid }}</td>
+                <td>{{ $restaurant->genre->genre }}</td>
             </tr>
             <tr>
                 <th>價格等級</th>
-                <td>{{ $restaurant->pid }}</td>
+                <td>{{ $restaurant->price_level->price_level }}</td>
             </tr>
             <tr>
                 <th>電話</th>

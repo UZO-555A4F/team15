@@ -4,12 +4,15 @@
 
 @section('guide_contents')
     <h1>顯示所有餐廳資料</h1>
-    <a href="{{ route('restaurants.create') }}">新增餐廳</a>
+    <a href="{{ route('restaurants.create') }}">新增餐廳</a><br>
+{{--    <tr>--}}
+{{--        <td>--}}
+{{--            <form action="/restaurants/search/"></form>--}}
+{{--            <input type="text" name="name" required>--}}
+{{--            <input type="submit" value="搜尋">--}}
+{{--        </td>--}}
+{{--    </tr>--}}
     <table border="1">
-        <tr>
-            <th>名稱</th>
-            <td><input type="text" name="name" required></td>
-        </tr>
         <tr>
             <th>名稱</th>
             <th>餐點類型</th>
